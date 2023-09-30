@@ -11,12 +11,6 @@ points = [ ( random.randint(0,TUK_WIDTH-75) , random.randint(0,TUK_HEIGHT-750) )
 points_count = 0
 frame = 0
 
-# def draw_big_point(p):      # 가야할 곳을 찍는다
-#     mouse_pointer.draw(p)
-
-# def draw_point(p):          # 점을 찍는다 (캐릭터가 이 좌표 하나하나를 따라가야함)
-#     character.clip_draw(frame * 66, 198, 66, 66, p[0], p[1], 150, 150)
-
 def draw_line(p1, p2):       #  p1(x,y) 시작 p2(x,y) 도착
     x1, y1 = p1[0], p1[1]    # 계산을 위해 좌표 넣어주고..
     x2, y2 = p2[0], p2[1]    # ..

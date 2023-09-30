@@ -57,17 +57,14 @@ def handle_events():
         if event.type == SDL_QUIT:
             running = False
         elif event.type == SDL_MOUSEMOTION:
-            mouse_pointer.draw_now(event.x,event.y)
-            # mx, my = event.x, TUK_HEIGHT - 1 - event.y
-            # mx, my = event.x, TUK_HEIGHT - event.y - 1  # Y 좌표 계산 수정
-            # if points:
-            #     points[0] = (mx, my)
+            mouse_x, mouse_y = event.x, TUK_HEIGHT - event.y - 1  # Y 좌표 계산 수정
+            mouse_pointer.draw(mouse_x, mouse_y)  # 마우스 커서를 그립니다.
+
         elif event.type == SDL_MOUSEBUTTONDOWN and event.button == SDL_BUTTON_LEFT:
             mx, my = event.x, TUK_HEIGHT - event.y - 1  # Y 좌표 계산 수정
             points.append((mx, my))
 
 running = True
-# hide_cursor()
 
 while running:
     handle_events()
